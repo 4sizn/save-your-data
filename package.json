@@ -1,0 +1,13 @@
+{
+  "name": "altteul-data",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "test:serve": "python3 test/serve.py",
+    "test:cdn": "node --experimental-strip-types test/cdn-resize.check.ts"
+  },
+  "devDependencies": {
+    "@types/chrome": "latest",
+    "typescript": "latest"
+  }
+}

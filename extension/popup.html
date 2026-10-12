@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>알뜰 데이터</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f2f2f7; --card: #fff; --text: #1c1c1e; --muted: #6c6c70; --seg: #e3e3e8; --accent: #007aff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #000; --card: #1c1c1e; --text: #f2f2f7; --muted: #98989f; --seg: #2c2c2e; --accent: #0a84ff; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; min-width: 300px; background: var(--bg); color: var(--text);
+      font: 15px/1.4 -apple-system, system-ui, sans-serif; }
+    fieldset { margin: 0 0 12px; padding: 12px; border: 0; border-radius: 12px; background: var(--card); }
+    legend { float: left; width: 100%; margin-bottom: 8px; color: var(--muted); font-size: 13px;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    fieldset:disabled { opacity: .5; }
+    .seg { clear: both; display: flex; padding: 2px; border-radius: 9px; background: var(--seg); }
+    .seg label { flex: 1; position: relative; }
+    .seg input { position: absolute; opacity: 0; inset: 0; margin: 0; }
+    .seg span { display: block; padding: 7px 4px; border-radius: 7px; text-align: center; font-size: 13px; }
+    .seg input:checked + span { background: var(--card); font-weight: 600; box-shadow: 0 1px 3px rgb(0 0 0 / .15); }
+    .seg input:focus-visible + span { outline: 2px solid var(--accent); }
+    button { width: 100%; padding: 12px; border: 0; border-radius: 12px; background: var(--accent); color: #fff; font: inherit; font-weight: 600; }
+    button:disabled { opacity: .5; }
+    .desc { clear: both; margin: 8px 2px 0; color: var(--muted); font-size: 13px; }
+    .desc b { color: var(--text); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <fieldset id="preset">
+    <legend>기본 모드</legend>
+    <div class="seg">
+      <label><input type="radio" name="preset" value="off"><span>끄기</span></label>
+      <label><input type="radio" name="preset" value="save"><span>절약</span></label>
+      <label><input type="radio" name="preset" value="strong"><span>강력</span></label>
+      <label><input type="radio" name="preset" value="text"><span>글만</span></label>
+    </div>
+    <p id="preset-desc" class="desc" aria-live="polite"></p>
+  </fieldset>
+  <fieldset id="site">
+    <legend id="site-legend">이 사이트</legend>
+    <div class="seg">
+      <label><input type="radio" name="site" value=""><span>기본</span></label>
+      <label><input type="radio" name="site" value="off"><span>끄기</span></label>
+      <label><input type="radio" name="site" value="save"><span>절약</span></label>
+      <label><input type="radio" name="site" value="strong"><span>강력</span></label>
+      <label><input type="radio" name="site" value="text"><span>글만</span></label>
+    </div>
+  </fieldset>
+  <fieldset id="view">
+    <legend>보기 방식 · 화면만 바뀌고 아끼는 양은 같아요</legend>
+    <div class="seg">
+      <label><input type="radio" name="view" value="keep"><span>자리 유지</span></label>
+      <label><input type="radio" name="view" value="hide"><span>숨기기</span></label>
+    </div>
+  </fieldset>
+  <button id="load-all" type="button">이 페이지 이미지 전부 불러오기</button>
+  <script src="popup.js"></script>
+</body>
+</html>

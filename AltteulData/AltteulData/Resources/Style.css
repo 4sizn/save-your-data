@@ -1,0 +1,124 @@
+* {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    cursor: default;
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light dark;
+    --bg: #f2f2f7;
+    --card: #fff;
+    --text: #1c1c1e;
+    --muted: #6c6c70;
+    --accent: #16a362;
+    --spacing: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #000;
+        --card: #1c1c1e;
+        --text: #f2f2f7;
+        --muted: #98989f;
+        --accent: #30d17f;
+    }
+}
+
+body {
+    margin: 0;
+    padding: calc(env(safe-area-inset-top) + 24px) var(--spacing) calc(env(safe-area-inset-bottom) + 24px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--bg);
+    color: var(--text);
+    font: -apple-system-body;
+}
+
+header { text-align: center; }
+header img { border-radius: 20px; }
+h1 { margin: 12px 0 4px; font: -apple-system-title1; font-weight: 700; }
+.lead { margin: 0; color: var(--muted); }
+
+.status { text-align: center; font-weight: 600; }
+.status p { margin: 0; display: none; }
+body.on .state-on { display: block; color: var(--accent); }
+body.off .state-off { display: block; }
+body:not(.on):not(.off) .state-unknown { display: block; }
+
+.steps {
+    margin: 0;
+    padding: 16px 16px 16px 40px;
+    border-radius: 12px;
+    background: var(--card);
+    line-height: 1.5;
+}
+.steps li + li { margin-top: 12px; }
+.steps em { font-style: normal; font-weight: 600; }
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #fff;
+    font: -apple-system-headline;
+    cursor: pointer;
+}
+body.on button { background: var(--card); color: var(--accent); }
+
+.fallback { margin: -8px 0 0; text-align: center; color: var(--muted); font: -apple-system-footnote; }
+
+.note {
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--card);
+}
+.note h2 { margin: 0 0 4px; font: -apple-system-headline; }
+.note p { margin: 0; color: var(--muted); font: -apple-system-subheadline; }
+
+.limits {
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--card);
+}
+.limits h2 { margin: 0 0 4px; font: -apple-system-headline; }
+.limits .hint { margin: 0 0 12px; color: var(--muted); font: -apple-system-footnote; }
+.limits .hint:last-child { margin: 12px 0 0; }
+.limits em { font-style: normal; font-weight: 600; }
+.limit-row { display: flex; align-items: center; gap: 8px; }
+.limit-row + .limit-row { margin-top: 10px; }
+.limit-row > label { flex: 1; }
+.limit-row input[type=number] {
+    width: 84px;
+    padding: 8px;
+    border: 1px solid var(--muted);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+    font: -apple-system-body;
+    text-align: right;
+    -webkit-user-select: text;
+    cursor: text;
+}
+.unit { display: flex; padding: 2px; border-radius: 8px; background: var(--bg); }
+.unit label { position: relative; }
+.unit input { position: absolute; opacity: 0; inset: 0; margin: 0; }
+.unit span { display: block; padding: 6px 10px; border-radius: 6px; font: -apple-system-subheadline; }
+.unit input:checked + span { background: var(--accent); color: #fff; font-weight: 600; }
+.unit input:focus-visible + span { outline: 2px solid var(--accent); }
+
+.choices { margin: 8px 0 0; }
+.choices dt { margin-top: 8px; font-weight: 600; }
+.choices dd { margin: 2px 0 0; color: var(--muted); font: -apple-system-subheadline; }
+.tag { margin-left: 4px; padding: 1px 6px; border-radius: 6px; background: var(--bg); color: var(--muted); font: -apple-system-caption1; font-weight: 600; }
+
+.savings { width: 100%; border-collapse: collapse; font: -apple-system-subheadline; }
+.savings th, .savings td { padding: 6px 4px; text-align: right; border-bottom: 1px solid var(--bg); }
+.savings th:first-child { text-align: left; font-weight: 400; }
+.savings thead th { color: var(--muted); font-weight: 600; }
+.savings td { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--accent); }
+.savings + .hint { margin-top: 8px; }

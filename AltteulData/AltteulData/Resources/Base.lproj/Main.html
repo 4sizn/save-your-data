@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" href="../Style.css">
+</head>
+<body>
+    <header>
+        <img src="../Icon.png" width="88" height="88" alt="">
+        <h1>알뜰 데이터</h1>
+        <p class="lead">Safari에서 사진·동영상은 아끼고, 글은 그대로 보여 줘요.</p>
+    </header>
+
+    <section class="status" aria-live="polite">
+        <p class="state-on">✓ 확장이 켜져 있어요</p>
+        <p class="state-off">확장이 아직 꺼져 있어요</p>
+        <p class="state-unknown">아래 순서대로 확장을 켜 주세요</p>
+    </section>
+
+    <ol class="steps">
+        <li><strong>확장 켜기</strong><br>아래 버튼을 눌러 <em>알뜰 데이터</em>를 켜 주세요.</li>
+        <li><strong>어디서 쓸지 고르기</strong><br>같은 화면의 <em>모든 웹사이트</em>에서 고를 수 있어요.
+            <dl class="choices">
+                <dt>물어보기 <span class="tag">기본</span></dt>
+                <dd>Safari에서 <em>가</em> 메뉴 → <em>알뜰 데이터</em>를 눌러 허용한 사이트만 아껴요. 나머지는 평소처럼 열려요.</dd>
+                <dt>허용</dt>
+                <dd>모든 사이트에서 아껴요. 사진 크기도 정확히 알려 드려요.</dd>
+            </dl>
+        </li>
+    </ol>
+
+    <button type="button" class="open-settings">Safari 확장 설정 열기</button>
+    <p class="fallback">설정 → 앱 → Safari → 확장 프로그램 → 알뜰 데이터</p>
+
+    <section class="limits">
+        <h2>바로 보여 줄 크기</h2>
+        <p class="hint">이 크기보다 작은 사진·동영상은 바로 보여 줘요. 더 크거나 크기를 모르면 <em>불러오기</em> 버튼으로 바뀌어요. 0으로 두면 항상 버튼으로 보여 줘요.</p>
+        <div class="limit-row" data-kind="image">
+            <label for="limit-image">사진</label>
+            <input id="limit-image" type="number" inputmode="numeric" min="0" step="1">
+            <div class="unit" role="radiogroup" aria-label="사진 단위">
+                <label><input type="radio" name="unit-image" value="KB"><span>KB</span></label>
+                <label><input type="radio" name="unit-image" value="MB"><span>MB</span></label>
+            </div>
+        </div>
+        <div class="limit-row" data-kind="video">
+            <label for="limit-video">동영상</label>
+            <input id="limit-video" type="number" inputmode="numeric" min="0" step="1">
+            <div class="unit" role="radiogroup" aria-label="동영상 단위">
+                <label><input type="radio" name="unit-video" value="KB"><span>KB</span></label>
+                <label><input type="radio" name="unit-video" value="MB"><span>MB</span></label>
+            </div>
+        </div>
+        <div class="limit-row" data-kind="audio">
+            <label for="limit-audio">소리</label>
+            <input id="limit-audio" type="number" inputmode="numeric" min="0" step="1">
+            <div class="unit" role="radiogroup" aria-label="소리 단위">
+                <label><input type="radio" name="unit-audio" value="KB"><span>KB</span></label>
+                <label><input type="radio" name="unit-audio" value="MB"><span>MB</span></label>
+            </div>
+        </div>
+        <p class="hint">참고: 네이버 기사 사진 1장이 약 30KB예요. 크기는 사이트가 알려 준 실제 크기만 써요. 크기를 모른다고 자주 나오면 위의 <em>모든 웹사이트</em>를 <em>허용</em>으로 바꿔 보세요.</p>
+    </section>
+
+    <section class="limits">
+        <h2>더 아끼고 싶다면: 글만</h2>
+        <p class="hint">Safari에서 <em>가</em> 메뉴 → <em>알뜰 데이터</em> → <em>글만</em>을 고르면 글만 받아요. 뉴스 기사 1개가 약 50KB예요. 같은 기사를 그냥 보면 7~46MB였어요.</p>
+        <p class="hint">대신 페이지 모양이 꾸밈없이 보이고 댓글·로그인 같은 기능은 멈춰요. 빈 화면이 나오는 사이트는 그 사이트만 <em>절약</em>으로 바꿔 주세요.</p>
+        <p class="hint"><strong>깔끔하게 읽으려면</strong> 자주 보는 사이트에서 <em>가</em> 메뉴 → <em>⋯</em> → <em>자동으로 읽기 도구 사용</em>을 켜 두세요. 다음부터 기사만 보기 좋게 열려요.</p>
+    </section>
+
+    <section class="limits">
+        <h2>모드별로 얼마나 아끼나요?</h2>
+        <p class="hint">Safari에서 <em>가</em> 메뉴 → <em>알뜰 데이터</em>에서 모드를 골라요. 원본 페이지 대비 실제로 측정한 값이에요.</p>
+        <table class="savings">
+            <thead><tr><th></th><th>절약</th><th>강력</th><th>글만</th></tr></thead>
+            <tbody>
+                <tr><th>네이버 뉴스</th><td>44%</td><td>71%</td><td>99%</td></tr>
+                <tr><th>다음 뉴스</th><td>82%</td><td>85%</td><td>99.8%</td></tr>
+                <tr><th>나무위키</th><td>42%</td><td>48%</td><td>93%</td></tr>
+                <tr><th>유튜브</th><td>74%</td><td>92%</td><td>74%*</td></tr>
+            </tbody>
+        </table>
+        <p class="hint">* 유튜브는 글만으로 볼 수 없어서 절약으로 바뀌어요. 처음 방문 기준이라, 다시 방문하면 사이트가 저장해 둔 파일 덕분에 더 적게 써요.</p>
+    </section>
+
+    <section class="note">
+        <h2>글은 그대로 보여요</h2>
+        <p>글, 링크, 버튼은 막지 않아요. 보고 있는 페이지 내용은 휴대폰 밖으로 보내지 않아요.</p>
+    </section>
+</body>
+</html>

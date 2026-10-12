@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>알뜰 데이터 PoC</title>
+  <style>body{font:17px/1.6 -apple-system,sans-serif;margin:0 16px}img{max-width:100%;height:auto}</style>
+</head>
+<body>
+  <header><img src="img/logo.svg" alt="" width="40" height="22"> 테스트 뉴스</header>
+  <main>
+    <article>
+      <h1>본문 텍스트는 항상 보여야 한다</h1>
+      <figure>
+        <img src="img/hero-1600.svg"
+             srcset="img/hero-400.svg 400w, img/hero-800.svg 800w, img/hero-1600.svg 1600w"
+             sizes="100vw" width="1600" height="900" alt="대표 이미지">
+        <figcaption>대표 이미지 캡션</figcaption>
+      </figure>
+      <p>첫 문단. 확장이 켜져 있으면 대표 이미지는 표시 너비 이상인 가장 작은 srcset 후보(여기서는 400w)로, 나머지는 차단되어야 한다.</p>
+      <p>동영상: 자동재생 안 됨, poster만 표시, 불러오기 버튼을 눌러야 요청.</p>
+      <video src="video/clip.mp4" poster="img/poster.svg" width="640" height="360" autoplay muted playsinline loop style="max-width:100%;height:auto"></video>
+      <img src="img/side-a.svg" width="300" height="169" alt="보조 이미지 A">
+      <p>둘째 문단.</p>
+      <img src="img/side-b.svg" width="300" height="169" alt="보조 이미지 B">
+      <p>링크 이미지: 플레이스홀더를 탭하면 링크 이동, 버튼을 누르면 이미지만 로드.</p>
+      <a href="https://example.com/"><img src="img/linked.svg" width="300" height="169" alt="링크된 이미지"></a>
+      <figure>
+        <img src="img/caption-only.svg" width="300" height="169">
+        <figcaption>alt 없이 캡션만 있는 이미지</figcaption>
+      </figure>
+      <p style="margin-top:150vh">아래쪽 lazy 이미지:</p>
+      <img src="img/lazy.svg" loading="lazy" width="300" height="169" alt="lazy 이미지">
+    </article>
+  </main>
+</body>
+</html>

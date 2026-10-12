@@ -1,0 +1,11 @@
+page,mode,rep,bytes_in
+naver-article-1,text,1,52483
+naver-article-2,text,1,60239
+naver-home,text,1,62344
+daum-article-video,text,1,43882
+daum-article-photo,text,1,52262
+naver-article-1,text,2,52330
+naver-article-2,text,2,60447
+naver-home,text,2,62826
+daum-article-video,text,2,43800
+daum-article-photo,text,2,52232

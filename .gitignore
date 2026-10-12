@@ -1,0 +1,10 @@
+node_modules/
+build/
+.DS_Store
+*.p8
+*.mobileprovision
+xcuserdata/
+*.xcuserstate
+# compiled from src/ by `npm run build`
+extension/*.js
+test/text-mode-*.png
